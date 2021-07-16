@@ -624,6 +624,8 @@ Changes control interface of given field's ID.
 - **`ampm : string`** _(only for fields of type datePicker)_ – Specifies which type of clock to use. Must be one of the strings “12” or “24” (default).
 - **`bulkEditing : boolean`** _(only for fields of type Array)_ – Specifies whether bulk editing of linked entries is possible.
 - **`trackingFieldId : string`** _(only for fields of type slugEditor)_ – Specifies the ID of the field that will be used to generate the slug value.
+- **`showCreateEntityAction : boolean`** _(only for fields of type Link)_ - specifies whether creation of new entries from the field is enabled.
+- **`showLinkEntityAction : boolean`** _(only for fields of type Link)_ - specifies whether linking to existing entries from the field is enabled.
 
 #### `resetFieldControl (fieldId)` : void
 
