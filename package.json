@@ -58,7 +58,7 @@
     "didyoumean2": "^5.0.0",
     "hoek": "^6.1.3",
     "https-proxy-agent": "^5.0.0",
-    "inquirer": "^7.1.0",
+    "inquirer": "^8.1.2",
     "joi": "^17.4.0",
     "kind-of": "^6.0.3",
     "listr": "^0.14.3",
