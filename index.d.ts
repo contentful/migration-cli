@@ -352,8 +352,11 @@ export interface IDeriveLinkedEntriesConfig {
    *  locale one of the locales in the space being transformed
    *
    * The return value must be an object with the same keys as specified in derivedFields. Their values will be written to the respective new entry fields for the current locale (i.e. {nameField: 'myNewValue'})
-  */
-  deriveEntryForLocale: (inputFields: ContentFields, locale: string) => { [field: string]: any }
+   */
+  deriveEntryForLocale: (
+    inputFields: ContentFields,
+    locale: string
+  ) => { [field: string]: any } | undefined,
 }
 
 export interface ITag {
