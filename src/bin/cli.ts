@@ -69,6 +69,18 @@ const createRun = ({ shouldThrow }) => async function run (argv) {
   const terminate = makeTerminatingFunction({ shouldThrow })
   try {
     migrationFunction = require(argv.filePath)
+    
+    // Support ES Module syntax `export default migrationFunction` like in use with TS-Node
+    if (typeof migrationFunction !== 'function') {
+      if (typeof migrationFunction.default === 'function') {
+        migrationFunction = migrationFunction.default
+      } else {
+        const message = chalk`{red.bold The ${argv.filePath} script did not export a function. Did you export default?}\n`
+        console.error(message)
+        console.error(e)
+        terminate(new Error(message))
+      }
+    }
   } catch (e) {
     const message = chalk`{red.bold The ${argv.filePath} script could not be parsed, as it seems to contain syntax errors.}\n`
     console.error(message)
